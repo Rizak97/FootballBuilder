@@ -61,6 +61,20 @@ public class FootballTeamServiceUnitTest {
 	}
 
 	@Test
+	public void testGetTeamName() {
+
+		String teamName = "HayesFc";
+		// Create an object for saving
+		List<FootballTeam> result = new ArrayList<>();
+		result.add(new FootballTeam(1L, "HayesFc", "Abdul", "Omar", "Striker"));
+
+		Mockito.when(repo.findFootballTeamByteamName(teamName)).thenReturn(result);
+
+		assertEquals(result, service.getByteamName(teamName));
+
+	}
+
+	@Test
 	public void updateByIdTest() {
 		long id = 1L;
 		FootballTeam entry = new FootballTeam("Hayes", "AB", "Omar", "RB");

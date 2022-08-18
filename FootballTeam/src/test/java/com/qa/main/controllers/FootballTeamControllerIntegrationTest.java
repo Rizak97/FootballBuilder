@@ -69,6 +69,20 @@ public class FootballTeamControllerIntegrationTest {
 				.andExpect(content().json(FootballTeamJSON));
 
 	}
+//	@Test
+//	public void readByTeamName() throws Exception {
+//		
+//		List<FootballTeam> result = new ArrayList<>();
+//		// Add the single entry to the list
+//		result.add(new FootballTeam(1L, "Hayes", "Ak", "Osman", "LB"));
+//		// Convert the list to JSON (The API responds in JSON)
+//		String resultAsJSON = mapper.writeValueAsString(result);
+//		
+//		mvc.perform(get("/team/getByTeamName/Hayes")
+//				.contentType(MediaType.APPLICATION_JSON))
+//				.andExpect(content().json(resultAsJSON));
+//		
+//	}
 
 	@Test
 	public void updateTest() throws Exception {
