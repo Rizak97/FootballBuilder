@@ -1,0 +1,23 @@
+html {
+    height: 100%;
+}
+
+
+    body {
+        background-image:linear-gradient(#112234, #060606);
+        background-repeat: no-repeat;
+        color: rgba(220, 218, 218, 0.908);
+    }
+    a {
+        font-family: Sans Serif;
+        }
+        #form-div{
+        border: 3px solid #ffffff;
+        padding: 10px;
+        width: 25%;
+        margin-top: 2%;
+        margin-left: 7%;
+        padding:10px;
+        display:inline-grid;
+        height: fit-content;
+        }
