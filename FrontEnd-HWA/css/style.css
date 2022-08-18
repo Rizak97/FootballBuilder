@@ -21,3 +21,22 @@ html {
         display:inline-grid;
         height: fit-content;
         }
+    #results-div{
+            border: 3px solid #ffffff;
+            padding: 10px;
+            font-family: Sans Serif;
+            width: fit-content;
+            margin: 10px;
+            width: 60%;
+            margin-top: 2%;
+            margin-left: 2%;
+            padding:10px;
+            display:inline-grid;
+            text-align: center;
+            color: #627264;
+            }
+            .entry-div{
+            display: inline-grid;
+            margin: 10px;
+            text-align: center;
+            }
