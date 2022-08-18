@@ -1,4 +1,5 @@
 package com.qa.main.controllers;
+
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -19,47 +20,44 @@ import com.qa.main.services.FootballTeamService;
 @CrossOrigin
 @RequestMapping("/team")
 public class FootballTeamController {
-private FootballTeamService service;
-	
+	private FootballTeamService service;
+
 	public FootballTeamController(FootballTeamService service) {
 		this.service = service;
 	}
-	
+
 	// POST REQUESTS - CREATE
 	@PostMapping("/create")
 	public ResponseEntity<FootballTeam> create(@RequestBody FootballTeam football) {
 		return new ResponseEntity<FootballTeam>(service.create(football), HttpStatus.CREATED);
 	}
-	
+
 	// GET REQUESTS - READ
 	@GetMapping("/getAll")
 	public ResponseEntity<List<FootballTeam>> getAll() {
 		return new ResponseEntity<List<FootballTeam>>(service.getAll(), HttpStatus.OK);
 	}
-	
+
 	@GetMapping("/getByID/{id}")
 	public FootballTeam getByID(@PathVariable long id) {
 		return service.getByID(id);
 	}
-	
-	
-	
+
 	@GetMapping("/getByTeamName/{team_name}")
 	public ResponseEntity<List<FootballTeam>> getByLastName(@PathVariable String team_name) {
 		return new ResponseEntity<List<FootballTeam>>(service.getByteamName(team_name), HttpStatus.OK);
 	}
-	
+
 	// PUT REQUESTS - UPDATE
 	@PutMapping("/update/{id}")
 	public FootballTeam update(@PathVariable long id, @RequestBody FootballTeam football) {
 		return service.update(id, football);
 	}
-	
+
 	// DELETE REQUESTS - DELETE
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<Boolean> delete(@PathVariable long id) {
 		return new ResponseEntity<Boolean>(service.delete(id), HttpStatus.NO_CONTENT);
 	}
-	
 
 }
